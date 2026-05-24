@@ -1,0 +1,14 @@
+lines_of_code
+functions
+classes
+loops
+conditionals
+complexity
+comment_ratio
+imports
+avg_function_length
+language_python
+language_javascript
+language_java
+language_cpp
+language_csharp

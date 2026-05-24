@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai CodeQuality Analyzer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="brand-name">Ai CodeQuality Analyzer</span>
+            </div> 
+        </nav>
+
+        <!-- Main Container -->
+        <main class="container">
+            <!-- Header -->
+            <div class="page-header">
+                <h1>AI-Powered Code Quality Analysis</h1> 
+            </div>
+
+            <!-- Input Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Code Input</h2>
+                    <div class="header-actions">
+                        <div class="language-select">
+                            <select id="languageSelect" class="select">
+                                <option value="auto">Auto Detect</option>
+                                <option value="python">Python</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="java">Java</option>
+                                <option value="cpp">C++</option>
+                                <option value="csharp">C#</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Editor -->
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <div class="line-numbers" id="lineNumbers">1</div>
+                        <textarea 
+                            id="codeInput" 
+                            class="code-textarea" 
+                            placeholder="Enter your code here..."
+                            spellcheck="false"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <!-- Action Bar -->
+                <div class="action-bar">
+                    <div class="file-actions">
+                        <button class="btn btn-outline" onclick="document.getElementById('fileUpload').click()">
+                            <span class="icon"></span> Upload File
+                        </button>
+                        <input type="file" id="fileUpload" accept=".py,.js,.java,.cpp,.cxx,.cc,.cs" hidden>
+                        <span class="file-name" id="fileName">No file selected</span>
+                    </div>
+                    <div class="code-actions">
+                        <button class="btn btn-outline" onclick="clearCode()">
+                            <span class="icon"></span> Clear
+                        </button>
+                        
+                        <button class="btn btn-primary" onclick="analyzeCode()" id="analyzeBtn">
+                            <span class="icon"></span> Analyze Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p class="loading-text">Analyzing code with ML models...</p>
+                <p class="loading-sub">Extracting metrics • Preparing features • Predicting bugs</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="results hidden"></div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Ai CodeQuality Analyzer</p>
+        </footer>
+    
+
+    <script src="js/script.js"></script>
+</body>
+</html>
