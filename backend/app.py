@@ -305,7 +305,7 @@ def analyze_code():
         print(f"Error: {traceback.format_exc()}")
         return jsonify({'error': str(e)}), 500
 
-if __name__ == '__main__':
-    print(" Starting Code Analyzer...")
-    print(" Open http://localhost:5000")
-    app.run(debug=True, port=5000)
+import os
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
